@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: myjavaapp-deploy
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: myjavaapp
@@ -12,7 +13,7 @@ spec:
         app: myjavaapp
     spec:
       containers:
-      - name: myjavaapp-container
+      - name: myjavaapp
         image: rohitsharma93/myjavaimage1122:1
         ports:
         - containerPort: 8080
